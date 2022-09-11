@@ -13,13 +13,13 @@ function Card(props) {
   const [sourceLink, setSourceLink] = useState('');
   const [thumbnailLink, setThumbnailLink] = useState('');
 
-  // useEffect(() => {
-  //   const fetchImg = async () => {
-  //     let response = await API.get();
-  //     console.log(response.data)
-  //   };
-  //   fetchImg();
-  // }, []);
+  useEffect(() => {
+    const fetchImg = async () => {
+      let response = await API.get();
+      console.log(response.data)
+    };
+    fetchImg();
+  }, []);
 
   return (
     <div className="card">
