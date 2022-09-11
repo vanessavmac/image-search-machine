@@ -1,14 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend server to manage database and handle api requests to SerpAPI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem nodemon server.js"
+    "backend:start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vanessa Mac",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

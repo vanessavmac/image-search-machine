@@ -16,7 +16,6 @@ function Results() {
       const data = response.data
       console.log(data)
       setResults(data)
-      
     };
     fetchImg();
   }, []);

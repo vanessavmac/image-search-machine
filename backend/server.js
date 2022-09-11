@@ -1,21 +1,18 @@
 const express = require('express');
-require('dotenv').config();
-
 const fs = require('fs')
 const https = require('https')
-
-// Create Express Server
-const app = express();
-
-var cors = require('cors');
-app.use(cors());
+require('dotenv').config();
 
 const PORT = 8080;
 const HOST = 'localhost';
-const { API_BASE_URL, API_KEY_VALUE } = process.env;
+const { API_KEY_VALUE } = process.env;
+const privateKey = fs.readFileSync( 'localhost-key.pem' );
+const certificate = fs.readFileSync( 'localhost.pem' );
 
-var privateKey = fs.readFileSync( 'localhost-key.pem' );
-var certificate = fs.readFileSync( 'localhost.pem' );
+// Create Express Server
+const app = express();
+var cors = require('cors');
+app.use(cors());
 
 https.createServer({
     key: privateKey,
@@ -24,6 +21,7 @@ https.createServer({
   console.log("Express server listening on port " + PORT);
 });
 
+// Retrieve image results from SerpApi
 app.get('/image-search', async (req, res) => {
   const SerpApi = require('google-search-results-nodejs');
   const { json } = require('express');
