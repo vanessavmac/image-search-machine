@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import API from '../api';
+import React from 'react';
 
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import ZoomInOutlinedIcon from '@mui/icons-material/ZoomInOutlined';
 
 function Card(props) {
-  const [results, setResults] = useState([])
-  const [thumbnail, setSrc] = useState('');
-  const [title, setTitle] = useState('');
-  const [source, setSource] = useState('');
-  const [sourceLink, setSourceLink] = useState('');
-  const [thumbnailLink, setThumbnailLink] = useState('');
-
-  useEffect(() => {
-    const fetchImg = async () => {
-      let response = await API.get();
-      console.log(response.data)
-    };
-    fetchImg();
-  }, []);
-
   return (
     <div className="card">
       <div className="card-header">
-        <a href={thumbnailLink}>
-          <img src={thumbnail} alt={title} />
+        <a href={props.thumbnailLink}>
+          <img src={props.thumbnail} alt={props.title} />
         </a>
       </div>
       <div className="card-body">
@@ -42,9 +26,9 @@ function Card(props) {
         </div>
         <h3>{props.query}</h3>
         <h4>
-          <a href={sourceLink}>{source}</a>
+          <a href={props.sourceLink}>{props.source}</a>
         </h4>
-        <p>{title}</p>
+        <p>{props.title}</p>
       </div>
     </div>
   );

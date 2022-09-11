@@ -24,7 +24,7 @@ https.createServer({
   console.log("Express server listening on port " + PORT);
 });
 
-app.get('/search.json', async (req, res) => {
+app.get('/image-search', async (req, res) => {
   const SerpApi = require('google-search-results-nodejs');
   const { json } = require('express');
   const search = new SerpApi.GoogleSearch(API_KEY_VALUE);
