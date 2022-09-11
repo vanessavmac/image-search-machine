@@ -1,0 +1,25 @@
+Fix CORS issue using proxy server
+Then issues with SSL
+
+https://stackoverflow.com/questions/71634259/how-do-i-fix-cors-error-when-trying-to-fetch-data-from-serp-api-into-my-react-ap
+- make sure proxy is making the request
+
+make a get request to my api
+then formulate a request via the google-search-results-nodejs
+
+https://wikifix.dev/how-do-i-grab-json-from-an-external-api-serp-api-from-my-backend-and-then-make-that-same-data-available-for-my-front-end-application-id26977
+
+https://stackoverflow.com/questions/51363855/how-to-configure-axios-to-use-ssl-certificate
+
+
+https://www.namecheap.com/support/knowledgebase/article.aspx/9705/33/installing-an-ssl-certificate-on-nodejs/#https_express
+
+https://wikifix.dev/how-do-i-grab-json-from-an-external-api-serp-api-from-my-backend-and-then-make-that-same-data-available-for-my-front-end-application-id26977
+
+https://github.com/axios/axios/issues/535
+
+https://thewebdev.info/2022/02/28/how-to-set-up-a-ssl-certificate-for-an-express-js-server/
+
+https://superuser.com/questions/620121/what-is-the-difference-between-a-certificate-and-a-key-with-respect-to-ssl
+
+https://stackoverflow.com/questions/11804202/how-do-i-setup-a-ssl-certificate-for-an-express-js-server
