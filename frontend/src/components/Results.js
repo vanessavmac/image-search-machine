@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import API from '../api'
+import API from '../api';
 import Card from './Card';
 
 function Results() {
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState([]);
   const [thumbnail, setSrc] = useState('');
   const [title, setTitle] = useState('');
   const [source, setSource] = useState('');
@@ -12,10 +12,12 @@ function Results() {
 
   useEffect(() => {
     const fetchImg = async () => {
-      let response = await API.get('/image-search');
-      const data = response.data
-      console.log(data)
-      setResults(data)
+      await API.post('/api/searches/new-search', {
+        params: { q: 'Apple', tbm: 'isch', ijn: '0' }
+      });
+      const data = await API.get('/api/searches/get-all')
+      console.log(data);
+      setResults(data);
     };
     fetchImg();
   }, []);
