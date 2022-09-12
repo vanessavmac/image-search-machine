@@ -6,14 +6,6 @@ const searchSchema = new Schema({
         type: String,
         required: true
     },
-    tbm: {
-        type: String,
-        required: true
-    },
-    ijn: {
-        type: String,
-        required: true
-    },
     cardImage: {
         type: Array,
         required: true

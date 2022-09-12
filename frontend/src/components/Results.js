@@ -12,9 +12,6 @@ function Results() {
 
   useEffect(() => {
     const fetchImg = async () => {
-      await API.post('/api/searches/new-search', {
-        params: { q: 'Apple', tbm: 'isch', ijn: '0' }
-      });
       const data = await API.get('/api/searches/get-all')
       console.log(data);
       setResults(data);

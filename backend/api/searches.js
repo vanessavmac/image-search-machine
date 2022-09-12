@@ -19,50 +19,45 @@ router.post("/new-search", async (req, res) => {
   const SerpApi = require("google-search-results-nodejs");
   const search = new SerpApi.GoogleSearch(API_KEY_VALUE);
 
-  const { q, tbm, ijn } = req.body.params;
+  const queries = req.body.queries;
+  console.log("queries: " + queries);
 
-  const handlePictures = async (req, res) => {
-    return new Promise((resolve) => {
-      const params = {
-        api_key: API_KEY_VALUE,
-        q: q,
-        tbm: tbm,
-        ijn: ijn,
+  queries.forEach(async (element) => {
+    if (element) {
+      const handlePictures = async (req, res) => {
+        return new Promise((resolve) => {
+          const params = {
+            api_key: API_KEY_VALUE,
+            q: element,
+            tbm: "isch",
+            ijn: "0",
+          };
+
+          const callback = function (data) {
+            resolve(data);
+          };
+
+          search.json(params, callback);
+        });
       };
+      const results = await handlePictures(req, res);
 
-      const callback = function (data) {
-        resolve(data);
-      };
+      // create schema and add data to data base here
+      const imagesResults = results.images_results;
 
-      search.json(params, callback);
-    });
-  };
-  const results = await handlePictures(req, res);
-
-  // create schema and add data to data base here
-  const imagesResults = results.images_results;
-
-  // images results is an array of json objects
-  const newSearch = new Search({
-    q: q,
-    tbm: tbm,
-    ijn: ijn,
-    cardImage: imagesResults[0],
-    imagesResults: imagesResults,
+      // images results is an array of json objects
+      const newSearch = new Search({
+        q: element,
+        cardImage: imagesResults[0],
+        imagesResults: imagesResults,
+      });
+      newSearch
+        .save()
+        .then(() => console.log("Search results successfully saved"))
+        .catch((err) => console.log("Error saving search results"));
+    }
   });
-  newSearch
-    .save()
-    .then(() =>
-      res.json({
-        message: "Search results successfully saved",
-      })
-    )
-    .catch((err) =>
-      res.status(400).json({
-        error: err,
-        message: "Error saving search results",
-      })
-    );
+
   // on success change UI to display cards by pulling data from the database
 });
 
