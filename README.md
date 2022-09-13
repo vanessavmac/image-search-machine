@@ -1,6 +1,6 @@
 # image-citation-machine
 
-A helpful tool for students, designers, and presentation makers.
+Under construction.
 
 MERN project using the [Google Images API](https://serpapi.com/images-results). Users can enter a list of words and the application returns the top google image search results. Users can swap out images as needed and then download all the images at once, making the process of finding images for slide decks, graphics, and presentations more efficient.
 
