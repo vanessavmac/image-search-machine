@@ -7,13 +7,17 @@ const searchSchema = new Schema({
         required: true
     },
     cardImage: {
-        type: Array,
+        type: Object,
         required: true
     },
     imagesResults: {
         type: Array,
         required: true
     },
+    id: { 
+        type: String,
+        required: true
+    }
 })
 
 module.exports = mongoose.model("Search", searchSchema, "searches")

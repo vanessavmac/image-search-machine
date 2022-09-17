@@ -4,17 +4,12 @@ import Card from './Card';
 
 function Results() {
   const [results, setResults] = useState([]);
-  const [thumbnail, setSrc] = useState('');
-  const [title, setTitle] = useState('');
-  const [source, setSource] = useState('');
-  const [sourceLink, setSourceLink] = useState('');
-  const [thumbnailLink, setThumbnailLink] = useState('');
 
   useEffect(() => {
     const fetchImg = async () => {
-      const data = await API.get('/api/searches/get-all')
-      console.log(data);
-      setResults(data);
+      const res = await API.get('/api/searches/get-all');
+      setResults(res.data);
+      console.log(res.data);
     };
     fetchImg();
   }, []);
@@ -24,13 +19,18 @@ function Results() {
       <h2>Search Results</h2>
       <button>Download All</button>
       <div className="gallery">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        
+        {results.map((element) => (
+          <Card
+            key={element.id}
+            thumbnailLink={element.cardImage.link}
+            thumbnail={element.cardImage.thumbnail}
+            title={element.cardImage.title}
+            query={element.q}
+            sourceLink={element.link}
+            source={element.title}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 // this api file will be purely for managing data in the database
 const express = require("express");
 const router = express.Router();
+const { v4: uuidv4 } = require('uuid');
 
 require("dotenv").config();
 const { API_KEY_VALUE } = process.env;
 
 const Search = require("../models/Search");
+
 
 // Retrieve all search results from database
 router.get("/get-all", (req, res) => {
@@ -50,6 +52,7 @@ router.post("/new-search", async (req, res) => {
         q: element,
         cardImage: imagesResults[0],
         imagesResults: imagesResults,
+        id: uuidv4()
       });
       newSearch
         .save()
