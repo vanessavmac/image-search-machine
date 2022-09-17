@@ -1,4 +1,4 @@
-# image-citation-machine
+# image-search-machine
 
 Under construction.
 
