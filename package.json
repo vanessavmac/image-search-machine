@@ -1,0 +1,19 @@
+{
+  "name": "image-citation-machine",
+  "version": "1.0.0",
+  "description": "An image search machine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessavmac/image-citation-machine.git"
+  },
+  "author": "Vanessa Mac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessavmac/image-citation-machine/issues"
+  },
+  "homepage": "https://github.com/vanessavmac/image-citation-machine#readme"
+}
