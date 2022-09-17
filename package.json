@@ -1,5 +1,5 @@
 {
-  "name": "image-citation-machine",
+  "name": "image-search-machine",
   "version": "1.0.0",
   "description": "An image search machine",
   "main": "index.js",
