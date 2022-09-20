@@ -32,3 +32,6 @@ https
 // API
 const searches = require("./api/searches");
 app.use("/api/searches", searches);
+
+const downloads = require("./api/downloads")
+app.use("/api/downloads", downloads)

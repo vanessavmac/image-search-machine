@@ -5,6 +5,10 @@ import Card from './Card';
 function Results() {
   const [results, setResults] = useState([]);
 
+  async function downloadAll() {
+    await API.post('/api/downloads/zip');
+  }
+
   useEffect(() => {
     const fetchImg = async () => {
       const res = await API.get('/api/searches/get-all');
@@ -17,7 +21,7 @@ function Results() {
   return (
     <div>
       <h2>Search Results</h2>
-      <button>Download All</button>
+      <button onClick={downloadAll}>Download All</button>
       <div className="gallery">
         
         {results.map((element) => (
