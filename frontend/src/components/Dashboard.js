@@ -18,7 +18,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>Image Citation Machine</h1>
+      <h1>Image Search Machine</h1>
       <label htmlFor="list">
         Copy and paste a list of items to generate images using the Google Images API.
       </label>

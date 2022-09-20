@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vanessavmac/image-citation-machine.git"
+    "url": "git+https://github.com/vanessavmac/image-search-machine.git"
   },
   "author": "Vanessa Mac",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vanessavmac/image-citation-machine/issues"
+    "url": "https://github.com/vanessavmac/image-search-machine/issues"
   },
-  "homepage": "https://github.com/vanessavmac/image-citation-machine#readme"
+  "homepage": "https://github.com/vanessavmac/image-search-machine#readme"
 }
