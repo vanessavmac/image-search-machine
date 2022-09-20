@@ -28,4 +28,4 @@ To run project locally, a [self-signed certificate]([https://web.dev/how-to-use-
 5. `npm run frontend:start`
 
 An Example Image Search:
-<img width="1438" alt="Screen Shot 2022-09-17 at 2 17 10 PM" src="https://user-images.githubusercontent.com/68434174/190871085-cee809b1-e95a-4653-9f62-2517a0727100.png">
+![Screen Shot 2022-09-20 at 11 30 16 AM](https://user-images.githubusercontent.com/68434174/191300622-b0b4fd51-7035-472d-9ecb-1023c5b7359c.png)
