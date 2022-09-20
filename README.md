@@ -19,7 +19,7 @@ Future Features/Applications of the Project:
 
 ## How to run the project
 
-To run project locally, a [self-signed certificate]([https://web.dev/how-to-use-local-https/](https://computingforgeeks.com/create-locally-trusted-ssl-certificates-on-linux-macos-using-mkcert/)) must be created.
+To run project locally, a [self-signed certificate](https://web.dev/how-to-use-local-https/) must be created.
 
 1. Clone the repository
 2. `cd backend`
