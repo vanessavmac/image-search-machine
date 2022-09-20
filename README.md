@@ -7,6 +7,12 @@ Tech Stack:
 
 MERN project using the [Google Images API](https://serpapi.com/images-results). Users can enter a list of words and the application returns the top google image search results. Users can swap out images as needed and then download all the images at once, making the process of finding images for slide decks, graphics, and presentations more efficient.
 
+What I've Learned So Far:
+- How to securely connect using HTTP and SSL to the Google Image API
+- Make API calls using Axios and React hooks (useEffect, useState)
+- Perform CRUD operations on MongoDB collection using Mongoose
+- Configure router and API to connect backend and frontend
+
 In-Progress:
 - Fixing bug issue with the file download function (currently able to retrieve files and save locally; next use JSZip to zip files)
 - Scrape website using Python to generate automatic citations
