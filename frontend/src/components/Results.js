@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
 import API from '../api';
 import Card from './Card';
+import b64ToBlob from 'b64-to-blob';
+import fileSaver from 'file-saver';
 
 function Results() {
   const [results, setResults] = useState([]);
+  const [downloading, setDownloading] = useState(false);
 
   async function downloadAll() {
-    await API.post('/api/downloads/zip');
+    await API.get('/api/downloads/zip');
+    setDownloading(true);
+
+    await API.get({ url: '/api/downloads/zip', responseType: 'blob' })
   }
 
   useEffect(() => {
@@ -23,7 +29,6 @@ function Results() {
       <h2>Search Results</h2>
       <button onClick={downloadAll}>Download All</button>
       <div className="gallery">
-        
         {results.map((element) => (
           <Card
             key={element.id}

@@ -2,7 +2,7 @@ const JSZip = require("jszip");
 const fs = require("fs");
 const request = require("request");
 
-const download = function (uri, filename, callback) {
+const download = async function (uri, filename, callback) {
   request.head(uri, function (err, res, body) {
     console.log("content-type:", res.headers["content-type"]);
     console.log("content-length:", res.headers["content-length"]);
@@ -27,11 +27,16 @@ module.exports = async () => {
       address: element.cardImage.original,
     });
   });
-  getImgAddresses.forEach((element) => {
-    download(element.address, element.query, () => {
-      console.log("done");
+  getImgAddresses.forEach(async (element) => {
+    await download(element.address, element.query, () => {
+      console.log("Image downloaded.");
+    }).then(async () => {
+      const file = require("../downloads/" + element.query);
+      zip.file(element.query + ".png", file, { binary: true });
     });
   });
 
-  //   zip.file();
+  zip.folder("../downloads");
+  const zipAsBase64 = await zip.generateAsync({ type: "blob" });
+  return zipAsBase64;
 };
