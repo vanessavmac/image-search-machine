@@ -15,8 +15,12 @@ In-Progress:
 
 Future Features/Applications of the Project:
 - While this project was initially created to help presentation makers gather quality images quickly, this project can also be repuposed to gether and label images to train an image classification model (connect python image classifier in the backend)
+- Deploy project to production using Heroku.
 
 ## How to run the project
+
+To run project locally, a [self-signed certificate](https://web.dev/how-to-use-local-https/) must be created.
+
 1. Clone the repository
 2. `cd backend`
 3. `npm run backend:start`
