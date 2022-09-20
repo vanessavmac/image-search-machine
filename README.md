@@ -8,14 +8,19 @@ Tech Stack:
 MERN project using the [Google Images API](https://serpapi.com/images-results). Users can enter a list of words and the application returns the top google image search results. Users can swap out images as needed and then download all the images at once, making the process of finding images for slide decks, graphics, and presentations more efficient.
 
 In-Progress:
+- Fixing bug issue with the file download function (currently able to retrieve files and save locally; next use JSZip to zip files)
 - Scrape website using Python to generate automatic citations
 - User Analytics (e.g. track the number of times application is used)
 - Implement google sign in so users can login and save their searches/image files
 
 Future Features/Applications of the Project:
 - While this project was initially created to help presentation makers gather quality images quickly, this project can also be repuposed to gether and label images to train an image classification model (connect python image classifier in the backend)
+- Deploy project to production using Heroku.
 
 ## How to run the project
+
+To run project locally, a [self-signed certificate]([https://web.dev/how-to-use-local-https/](https://computingforgeeks.com/create-locally-trusted-ssl-certificates-on-linux-macos-using-mkcert/)) must be created.
+
 1. Clone the repository
 2. `cd backend`
 3. `npm run backend:start`
